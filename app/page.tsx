@@ -87,7 +87,7 @@ export default function HomePage() {
   const [isProductsPageOpen, setIsProductsPageOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+  <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 font-sans">
       <Navigation
         onCartClick={() => setIsCartOpen(true)}
         onAuthClick={setAuthModal}
@@ -95,32 +95,31 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-transparent" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="relative pt-24 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-transparent" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-white"
+              className="text-white space-y-6"
             >
-              <Badge className="mb-4 bg-blue-600 hover:bg-blue-700">
+              <Badge className="mb-4 bg-blue-600 hover:bg-blue-700 shadow-lg">
                 <Shield className="w-4 h-4 mr-2" />
                 Tecnología Arduino
               </Badge>
-              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-extrabold mb-4 leading-tight tracking-tight drop-shadow-xl">
                 Protege tu hogar con
                 <span className="text-blue-400 block">SafeBuzz</span>
               </h1>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Sistemas de seguridad inteligentes con tecnología Arduino. Monitoreo 24/7, alertas en tiempo real y
-                control total desde tu móvil.
+              <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
+                Sistemas de seguridad inteligentes con tecnología Arduino. Monitoreo 24/7, alertas en tiempo real y control total desde tu móvil.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Button
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-lg px-8"
+                  className="bg-blue-600 hover:bg-blue-700 text-lg px-8 shadow-md"
                   onClick={() => setIsProductsPageOpen(true)}
                 >
                   Ver Productos
@@ -129,7 +128,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white text-lg px-8 bg-transparent"
+                  className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white text-lg px-8 bg-transparent shadow-md"
                   onClick={() => {
                     document.getElementById("videos")?.scrollIntoView({ behavior: "smooth" })
                   }}
@@ -143,13 +142,13 @@ export default function HomePage() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative flex justify-center"
             >
               <div className="relative z-20">
                 <img
                   src="/imagen.webp?height=500&width=600"
                   alt="SafeBuzz Security System"
-                  className="rounded-2xl shadow-2xl"
+                  className="rounded-3xl shadow-2xl border-4 border-blue-900/40 w-full max-w-md mx-auto"
                 />
               </div>
               <div className="absolute -top-4 -right-4 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl" />
@@ -160,21 +159,21 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-slate-800/50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-slate-800/60">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">¿Por qué elegir SafeBuzz?</h2>
+            <h2 className="text-4xl font-extrabold text-white mb-3 tracking-tight">¿Por qué elegir SafeBuzz?</h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Tecnología de vanguardia con la confiabilidad de Arduino
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 icon: Shield,
@@ -198,7 +197,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
-                <Card className="bg-slate-800 border-slate-700 hover:border-blue-500 transition-colors">
+                <Card className="bg-slate-800 border-slate-700 hover:border-blue-500 transition-colors shadow-lg">
                   <CardHeader className="text-center">
                     <feature.icon className="w-12 h-12 text-blue-400 mx-auto mb-4" />
                     <CardTitle className="text-white">{feature.title}</CardTitle>
@@ -214,19 +213,19 @@ export default function HomePage() {
       </section>
 
       {/* Featured Products */}
-      <section id="productos" className="py-16">
-        <div className="container mx-auto px-4">
+      <section id="productos" className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Productos Destacados</h2>
+            <h2 className="text-4xl font-extrabold text-white mb-3 tracking-tight">Productos Destacados</h2>
             <p className="text-gray-300 text-lg">Los sistemas de seguridad más avanzados del mercado</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {featuredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
@@ -242,19 +241,19 @@ export default function HomePage() {
       </section>
 
       {/* Demo Videos */}
-      <section id="videos" className="py-16 bg-slate-800/50">
-        <div className="container mx-auto px-4">
+      <section id="videos" className="py-20 bg-slate-800/60">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-14"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Videos Demostrativos</h2>
+            <h2 className="text-4xl font-extrabold text-white mb-3 tracking-tight">Videos Demostrativos</h2>
             <p className="text-gray-300 text-lg">Aprende cómo funciona nuestro sistema paso a paso</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {demoVideos.map((video, index) => (
               <motion.div
                 key={video.id}
@@ -263,7 +262,7 @@ export default function HomePage() {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
               >
                 <Card
-                  className="bg-slate-800 border-slate-700 hover:border-blue-500 transition-colors overflow-hidden group cursor-pointer"
+                  className="bg-slate-800 border-slate-700 hover:border-blue-500 transition-colors overflow-hidden group cursor-pointer shadow-lg"
                   onClick={() => setSelectedVideo(video)}
                 >
                   <div className="relative">
@@ -288,17 +287,17 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-20">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <Card className="bg-gradient-to-r from-blue-900 to-blue-800 border-blue-700 max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-r from-blue-900 to-blue-800 border-blue-700 shadow-2xl">
               <CardHeader className="pb-8">
-                <CardTitle className="text-4xl font-bold text-white mb-4">¿Listo para proteger tu hogar?</CardTitle>
+                <CardTitle className="text-4xl font-extrabold text-white mb-4 tracking-tight">¿Listo para proteger tu hogar?</CardTitle>
                 <CardDescription className="text-blue-100 text-lg">
                   Únete a miles de familias que ya confían en SafeBuzz
                 </CardDescription>
@@ -307,7 +306,7 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button
                     size="lg"
-                    className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
+                    className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 shadow-md"
                     onClick={() => setIsProductsPageOpen(true)}
                   >
                     Comprar Ahora
@@ -316,7 +315,7 @@ export default function HomePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-blue-300 text-blue-100 hover:bg-blue-800 text-lg px-8 bg-transparent"
+                    className="border-blue-300 text-blue-100 hover:bg-blue-800 text-lg px-8 bg-transparent shadow-md"
                     onClick={() => {
                       window.open("mailto:ventas@safebuzz.com", "_blank")
                     }}

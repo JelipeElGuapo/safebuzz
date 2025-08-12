@@ -36,32 +36,32 @@ export default function Navigation({ onCartClick, onAuthClick, onProductsClick }
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-2">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              className="px-4 py-2 rounded-md font-medium text-white bg-transparent hover:bg-blue-700 hover:text-white transition-colors"
             >
               Inicio
             </button>
-            <button onClick={onProductsClick} className="text-gray-300 hover:text-blue-400 transition-colors">
+            <button onClick={onProductsClick} className="px-4 py-2 rounded-md font-medium text-white bg-transparent hover:bg-blue-700 hover:text-white transition-colors">
               Productos
             </button>
             <button
-              onClick={() => document.getElementById("videos")?.scrollIntoView({ behavior: "smooth" })}
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              onClick={() => document.getElementById('videos')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-4 py-2 rounded-md font-medium text-white bg-transparent hover:bg-blue-700 hover:text-white transition-colors"
             >
               Videos
             </button>
             <a
               href="/app-release.apk"
               download
-              className="text-gray-300 hover:text-green-500 transition-colors px-2 py-1 rounded"
+              className="px-4 py-2 rounded-md font-medium text-white bg-green-600 hover:bg-green-700 transition-colors"
             >
               App Móvil
             </a>
             <button
-              onClick={() => window.open("mailto:soporte@safebuzz.com", "_blank")}
-              className="text-gray-300 hover:text-blue-400 transition-colors"
+              onClick={() => window.open('mailto:soporte@safebuzz.com', '_blank')}
+              className="px-4 py-2 rounded-md font-medium text-white bg-transparent hover:bg-blue-700 hover:text-white transition-colors"
             >
               Soporte
             </button>
